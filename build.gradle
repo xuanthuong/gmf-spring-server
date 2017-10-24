@@ -16,7 +16,8 @@ apply plugin: 'idea'
 apply plugin: 'org.springframework.boot'
 
 jar {
-    baseName = 'gs-spring-boot'
+    // baseName = 'gs-spring-boot'
+    baseName = 'gs-accessing-data-mysql'
     version =  '0.1.0'
 }
 
@@ -38,5 +39,13 @@ dependencies {
     compile("org.springframework.boot:spring-boot-starter-actuator")
     // end::actuator[]
     compile "joda-time:joda-time:2.2"
+
+    // JPA Data (We are going to use Repositories, Entities, Hibernate, etc...)
+    compile 'org.springframework.boot:spring-boot-starter-data-jpa'
+
+    // Use MySQL Connector-J
+    compile 'mysql:mysql-connector-java'
+
+    testCompile('org.springframework.boot:spring-boot-starter-test')
     testCompile("junit:junit")
 }
